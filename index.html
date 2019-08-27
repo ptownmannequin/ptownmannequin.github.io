@@ -16,6 +16,16 @@ v.src=c,v.async=!0,v.id="_uasdk",v.rel=e,t.head.appendChild(v)}(window,document,
     appKey: 'ZhPdF9PnRZ6vDA-Vvs9tVw',
     token: 'MTpaaFBkRjlQblJaNnZEQS1WdnM5dFZ3OjVwYVZJNzFrNnZpNTRCQ2prZTRWSXFRX181ZGk3SkRoR1Z2dFV6cThqMFk'
   });
+  UA.then(function(sdk) {
+    console.log(sdk.channel.id)
+  }).catch(function(err) {
+    console.log(err)
+  })
 
+  // Multiple calls have no additional expense.
+  UA.then(function(sdk) {
+    $('#register').show()
+    $('#register').click(function(ev) { sdk.register() })
+  })
 </script>
 </html>
