@@ -17,16 +17,18 @@ v.src=c,v.async=!0,v.id="_uasdk",v.rel=e,t.head.appendChild(v)}(window,document,
     token: 'MTpaaFBkRjlQblJaNnZEQS1WdnM5dFZ3OjVwYVZJNzFrNnZpNTRCQ2prZTRWSXFRX181ZGk3SkRoR1Z2dFV6cThqMFk'
   });
   UA.then(function(sdk) {
-    sdk.register();
-    console.log(sdk.channel.id)
-  }).catch(function(err) {
-    console.log(err)
-  })
-
-  // Multiple calls have no additional expense.
+  sdk.register() // Returns Channel object
+})
   UA.then(function(sdk) {
-    $('#register').show()
-    $('#register').click(function(ev) { sdk.register() })
-  })
+  console.log(sdk.channel.id)
+}).catch(function(err) {
+  console.log(err)
+})
+
+// Multiple calls have no additional expense.
+UA.then(function(sdk) {
+  $('#register').show()
+  $('#register').click(function(ev) { sdk.register() })
+})
 </script>
 </html>
